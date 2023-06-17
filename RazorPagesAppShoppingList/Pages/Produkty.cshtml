@@ -1,0 +1,73 @@
+﻿@page
+@using RazorPagesShoppingList.Models;
+@model RazorPagesShoppingList.Pages.ProduktyModel
+@{
+    <p>
+     Please insert your products info here :D
+    </p>
+    <h1>Products</h1>
+
+    <form method="post">
+
+        <input type="number" name="id">
+
+        <input type="text" name="name">
+
+        <input type="number" name="amount">
+
+        <button type="submit">Add</button>
+
+
+
+
+    </form>
+
+    <table class="table">
+
+
+        <thead>
+
+            <tr>
+
+                <th>Id</th>
+                <th>Name</th>
+                <th>Amount</th>
+
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+            @foreach (Products products in Model.Produkty)
+            {
+                <tr>
+                    <td>
+                        @products.Id
+                    </td>
+                    <td>
+                        @products.Name
+                    </td>
+                    <td>
+                        @products.Amount
+                    </td>
+
+
+
+                </tr>
+            }
+
+
+
+
+        </tbody>
+
+
+
+    </table>
+
+
+
+
+
+}
